@@ -8,27 +8,19 @@ void verifyTwosComplement(int number) {
     cout << "Computed Two's complement: " << twosComplement << endl;
     cout << "Are they equal? " << (number == twosComplement ? "Yes" : "No") << endl;
 }
-void display(int x){
-    int size;
-    size=32;
-    bool bits[size];
-    for(int i=0; i<size;++i){
-        bits[i]= false;
+
+void display(int number) {
+    const int bits = sizeof(int) * 8; // Calculate the number of bits in an int
+    cout << number << " in binary: ";
+
+    // Iterate through each bit from the most significant to the least significant
+    for (int i = bits - 1; i >= 0; --i) {
+        int bit = (number >> i) & 1; // Right shift and mask to get the bit value
+        cout << bit;
     }
-    for(int i=0;i<size;++i){
-        if(x&(1<<i)){
-                bits[i]=true;
-            }
-    }
-    
-    for(int i=size-1;i>0;--i){
-        if(bits[i])
-            cout<<1;
-        else 
-            cout<<0;
-    }
-    cout<< endl;
+    cout << endl;
 }
+
 
 int main(){
     int x,y;
