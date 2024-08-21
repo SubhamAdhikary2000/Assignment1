@@ -1,6 +1,13 @@
 #include <iostream>
 using namespace std;
-
+void verifyTwosComplement(int number) {
+    // Two's complement verification using bitwise NOT and add 1
+    int twosComplement = (~(-number)) + 1;
+    cout << "Two's complement verification:" << endl;
+    cout << "Original negative number: " << number << endl;
+    cout << "Computed Two's complement: " << twosComplement << endl;
+    cout << "Are they equal? " << (number == twosComplement ? "Yes" : "No") << endl;
+}
 void display(int x){
     int size;
     size=32;
@@ -31,5 +38,8 @@ int main(){
     display(x);
     cout<<"Memory representation of the Negative integer:"<<endl;
     display(y);
+    cout << "\nTwo's Complement Verification:" << endl;
+    verifyTwosComplement(y);
+
 }
 
