@@ -4,7 +4,7 @@ int main()
 {
 	int TotalDay,RemainingDay,Years,Weeks;
 	cout<<"Enter Days"<<endl;
-	cin>>TotalDays;
+	cin>>TotalDay;
 	Years=TotalDay/365;
 	RemainingDay=TotalDay%365;
         Weeks=RemainingDay/7;
